@@ -1,71 +1,56 @@
-/* Reset */
-* {
+/* Background negro + tipografía */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Fondo oscuro elegante */
-body {
     background: #0d0d0d;
     color: white;
+    font-family: 'Inter', sans-serif;
     height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-/* Contenedor central */
+/* Colores principales */
+:root {
+    --accent: #C75E35;
+}
+
 .container {
     text-align: center;
-    animation: fadeIn 1.4s ease;
+    animation: fadein 1.5s ease forwards;
+    opacity: 0;
 }
 
-/* Logo */
+/* Logo flotando como en la otra página */
 .logo {
     width: 160px;
     margin-bottom: 20px;
     animation: float 4s ease-in-out infinite;
 }
 
-/* Texto principal */
+/* Título */
 h1 {
     font-size: 2.8rem;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-bottom: 10px;
+    color: var(--accent);
 }
 
-/* Texto secundario */
+/* Subtexto */
 p {
-    opacity: 0.7;
-    font-size: 1rem;
+    opacity: 0.75;
+    font-size: 1.1rem;
 }
 
-/* Animación flotante sutil */
+/* Animaciones */
+@keyframes fadein {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes float {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
-}
-
-/* Aparición suave */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsividad para celulares */
-@media (max-width: 600px) {
-    .logo {
-        width: 120px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    p {
-        font-size: 0.9rem;
-    }
 }
